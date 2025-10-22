@@ -9,6 +9,7 @@ import {
   Accessibility,
   Users,
   Wifi,
+  Sparkles,
 } from 'lucide-react';
 
 const facilities = [
@@ -16,41 +17,49 @@ const facilities = [
     name: 'Área de treino funcional',
     iconName: 'Dumbbell',
     description: 'Espaço equipado para treinos funcionais',
+    color: 'from-primary/20 to-cyan-500/20',
   },
   {
     name: 'Chuveiro',
     iconName: 'ShowerHead',
     description: 'Chuveiros limpos e confortáveis',
+    color: 'from-blue-500/20 to-primary/20',
   },
   {
     name: 'Estacionamento',
     iconName: 'Car',
     description: 'Vagas disponíveis para clientes',
+    color: 'from-purple-500/20 to-pink-500/20',
   },
   {
     name: 'Vestiário',
     iconName: 'Shirt',
     description: 'Vestiários masculino e feminino',
+    color: 'from-green-500/20 to-emerald-500/20',
   },
   {
     name: 'Bebedouro',
     iconName: 'Droplets',
     description: 'Água filtrada disponível',
+    color: 'from-cyan-500/20 to-blue-500/20',
   },
   {
-    name: 'Espaço adaptado para cadeira de rodas',
+    name: 'Acessibilidade',
     iconName: 'Accessibility',
-    description: 'Acessibilidade garantida',
+    description: 'Espaço adaptado para todos',
+    color: 'from-orange-500/20 to-red-500/20',
   },
   {
-    name: 'Personal trainer',
+    name: 'Personal Trainer',
     iconName: 'Users',
     description: 'Treinadores especializados',
+    color: 'from-yellow-500/20 to-orange-500/20',
   },
   {
-    name: 'Wi-Fi',
+    name: 'Wi-Fi Grátis',
     iconName: 'Wifi',
-    description: 'Internet gratuita',
+    description: 'Internet de alta velocidade',
+    color: 'from-indigo-500/20 to-purple-500/20',
   },
 ];
 
@@ -67,39 +76,67 @@ const iconMap = {
 
 export function FacilitiesSection() {
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Nossas <span className="text-primary">Instalações</span>
+    <section className="py-24 bg-gradient-to-b from-background via-muted/10 to-background relative overflow-hidden">
+      {/* Decorative Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="text-primary font-bold text-sm uppercase tracking-wider px-4 py-2 rounded-full bg-primary/10 border border-primary/20 inline-flex items-center gap-2">
+              <Sparkles className="h-4 w-4" />
+              Infraestrutura
+            </span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-balance leading-tight">
+            Nossas{' '}
+            <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400">
+              Instalações
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Estrutura completa para seu melhor desempenho
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-6" />
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Facilities Grid */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {facilities.map((facility, index) => {
               const IconComponent =
                 iconMap[facility.iconName as keyof typeof iconMap];
               return (
                 <Card
                   key={index}
-                  className="text-center hover:shadow-lg transition-shadow"
+                  className="group text-center border-2 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden relative"
                 >
-                  <CardContent className="p-6">
+                  {/* Gradient Background on Hover */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${facility.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  />
+
+                  <CardContent className="p-8 relative z-10">
                     <div className="flex flex-col items-center space-y-4">
-                      <div className="p-3 rounded-full bg-primary/10">
-                        {IconComponent && (
-                          <IconComponent className="h-8 w-8 text-primary" />
-                        )}
+                      {/* Icon Container */}
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                        <div className="relative p-5 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                          {IconComponent && (
+                            <IconComponent className="h-10 w-10 text-primary" />
+                          )}
+                        </div>
                       </div>
+
+                      {/* Content */}
                       <div>
-                        <h3 className="font-semibold text-lg mb-2">
+                        <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors duration-300">
                           {facility.name}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {facility.description}
                         </p>
                       </div>

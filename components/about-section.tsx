@@ -1,25 +1,73 @@
+import { CheckCircle2 } from 'lucide-react';
+
 export function AboutSection() {
+  const highlights = [
+    'Ginástica',
+    'LPO',
+    'Calistenia',
+    'Maromba (Musculação Funcional)',
+  ];
+
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Bem-vindo a <span className="text-primary">VIRTUS</span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-            Somos uma Box de Cross Training e acreditamos na democratização
-            desta forma de treinar! Todos podem fazer Cross. O time VIRTUS é
-            capacitado e especializado na modalidade.
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Com uma agenda robusta e completa, além do Cross, é possível se
-            desenvolver ainda mais com os treinos específicos de{' '}
-            <span className="text-primary font-semibold">Ginástica</span>,
-            <span className="text-primary font-semibold"> LPO</span>,
-            <span className="text-primary font-semibold"> Calistenia</span> e
-            <span className="text-primary font-semibold"> Maromba</span>{' '}
-            (Musculação Funcional).
-          </p>
+    <section className="py-24 bg-gradient-to-b from-black via-background to-background relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="text-primary font-bold text-sm uppercase tracking-wider px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                Sobre Nós
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-balance leading-tight">
+              Bem-vindo a{' '}
+              <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400">
+                VIRTUS
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
+          </div>
+
+          {/* Content */}
+          <div className="space-y-8">
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-6 font-light">
+                Somos uma Box de Cross Training e acreditamos na{' '}
+                <span className="text-primary font-semibold">
+                  democratização
+                </span>{' '}
+                desta forma de treinar! Todos podem fazer Cross. O time VIRTUS é
+                capacitado e especializado na modalidade.
+              </p>
+              <div className="w-16 h-1 bg-primary/30 rounded-full" />
+            </div>
+
+            <div className="bg-gradient-to-br from-primary/5 to-transparent backdrop-blur-sm border border-primary/10 rounded-3xl p-8 md:p-12 shadow-xl">
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-8">
+                Com uma agenda robusta e completa, além do Cross, é possível se
+                desenvolver ainda mais com treinos específicos:
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {highlights.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 bg-background/50 rounded-xl p-4 hover:bg-background/80 transition-colors duration-300 group"
+                  >
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
+                    <span className="text-lg font-semibold text-foreground">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
