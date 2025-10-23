@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 export function LocationSection() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -14,9 +14,9 @@ export function LocationSection() {
           <p className="text-lg text-muted-foreground">Venha nos visitar e conhecer nossa estrutura</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Map */}
-          <div className="rounded-lg overflow-hidden border-2 border-border h-[400px]">
+          <div className="rounded-lg overflow-hidden border-2 border-border h-[500px] mb-8">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.2!2d-35.26!3d-5.91!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwNTQnMzkuNiJTIDM1wrAxNSczNi4wIlc!5e0!3m2!1sen!2sbr!4v1234567890"
               width="100%"
@@ -30,16 +30,16 @@ export function LocationSection() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Card className="border-2 h-full">
+              <CardHeader className="pb-2">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <MapPin className="h-4 w-4 text-primary" />
                   Endereço
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="pb-3">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Av. Maria Lacerda Montenegro, 2475
                   <br />
                   Nova Parnamirim, Parnamirim - RN
@@ -49,15 +49,15 @@ export function LocationSection() {
               </CardContent>
             </Card>
 
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-primary" />
+            <Card className="border-2 h-full">
+              <CardHeader className="pb-2">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Clock className="h-4 w-4 text-primary" />
                   Horário de Atendimento
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="pb-3">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Segunda a Sexta: 05:00 - 10:00 | 16:00 - 21:30
                   <br />
                   Sábado: 07:00 - 10:30
@@ -67,15 +67,15 @@ export function LocationSection() {
               </CardContent>
             </Card>
 
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Phone className="h-5 w-5 text-primary" />
+            <Card className="border-2 h-full">
+              <CardHeader className="pb-2">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Phone className="h-4 w-4 text-primary" />
                   Contato
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="pb-3">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Telefone: (84) 9999-9999
                   <br />
                   WhatsApp: (84) 9999-9999
@@ -83,15 +83,15 @@ export function LocationSection() {
               </CardContent>
             </Card>
 
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Mail className="h-5 w-5 text-primary" />
+            <Card className="border-2 h-full">
+              <CardHeader className="pb-2">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Mail className="h-4 w-4 text-primary" />
                   E-mail
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">contato@virtuscrosstraining.com.br</p>
+              <CardContent className="pb-3">
+                <p className="text-muted-foreground text-sm">contato@virtuscrosstraining.com.br</p>
               </CardContent>
             </Card>
           </div>

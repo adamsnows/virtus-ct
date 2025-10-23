@@ -40,11 +40,11 @@ export function SiteHeader() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/icones_virtus-02-Xl3AHjxhQ5WMgOwv3ws2LfgbnyJE6j.jpg"
+              src="/virtus-complete-logo.png"
               alt="VIRTUS"
-              width={50}
+              width={150}
               height={50}
-              className="w-12 h-12"
+              className="h-12 w-auto"
             />
           </Link>
 

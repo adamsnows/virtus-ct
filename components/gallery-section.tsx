@@ -57,13 +57,8 @@ export function GallerySection() {
   const [activeTab, setActiveTab] = useState('box');
 
   return (
-    <section className="py-24 bg-gradient-to-b from-background via-muted/10 to-background relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-24 relative">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
@@ -97,7 +92,7 @@ export function GallerySection() {
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="text-base font-bold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:shadow-primary/30 data-[state=inactive]:text-foreground/70 data-[state=inactive]:hover:text-foreground data-[state=inactive]:hover:bg-foreground/10 transition-all duration-300 py-4 px-6 flex items-center justify-center gap-2"
+                  className="text-base font-bold rounded-xl data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-primary/80 data-[state=active]:text-black data-[state=active]:shadow-lg data-[state=active]:shadow-primary/30 data-[state=inactive]:text-foreground/70 data-[state=inactive]:hover:text-foreground data-[state=inactive]:hover:bg-foreground/10 transition-all duration-300 py-4 px-6 flex items-center justify-center gap-2 [&[data-state=active]>svg]:text-black"
                 >
                   <Icon className="h-5 w-5" />
                   {category.label}

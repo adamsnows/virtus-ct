@@ -12,7 +12,10 @@ export const metadata: Metadata = {
   title: "VIRTUS Cross Training - Todos Podem Fazer Cross",
   description:
     "Box de Cross Training em Parnamirim, RN. Oferecemos Cross Training, Ginástica, LPO, Calistenia e Maromba. Agende seu treino experimental!",
-    generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: '/logo.png',
+  }
 }
 
 export default function RootLayout({

@@ -36,12 +36,8 @@ const trainings = [
 
 export function TrainingSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-24 relative">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">

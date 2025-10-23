@@ -23,12 +23,8 @@ const scheduleData = [
 
 export function ScheduleSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-24 relative">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">

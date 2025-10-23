@@ -6,10 +6,10 @@ import Image from 'next/image';
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background Image with sophisticated overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/5 z-10" />
         <Image
           src="/cross-training-gym-interior-with-equipment.jpg"
@@ -24,27 +24,15 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
-        <div className="mb-12 flex justify-center animate-fade-in">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logos_virtus_secundarias-01-nOphsNH1Ru9bshvj25XqU9rWCs9HiA.jpg"
-            alt="VIRTUS Cross Training"
-            width={600}
-            height={200}
-            className="w-full max-w-2xl h-auto drop-shadow-[0_0_30px_rgba(0,217,255,0.3)]"
-            priority
-          />
-        </div>
-
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 text-balance leading-tight tracking-tight animate-fade-in-up">
-          Todos Podem Fazer{' '}
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 text-balance leading-tight tracking-tight animate-fade-in">
+          VIRTUS{' '}
           <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400">
-            Cross
+            Cross Training
           </span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up animation-delay-200">
-          Acreditamos na democratização do Cross Training. O time VIRTUS é
-          capacitado e especializado na modalidade.{' '}
+          O time VIRTUS é capacitado e especializado na modalidade.{' '}
           <span className="text-primary font-medium">
             Estamos prontos para receber você!
           </span>
@@ -74,7 +62,7 @@ export function HeroSection() {
               <Award className="h-10 w-10 text-primary mx-auto mb-3" />
               <p className="text-3xl font-bold text-white mb-1">5+</p>
               <p className="text-gray-400 text-sm uppercase tracking-wider">
-                Anos de Experiência
+                Anos de História
               </p>
             </div>
           </div>
